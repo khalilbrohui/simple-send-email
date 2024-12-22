@@ -69,6 +69,16 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",  # Replace with the URL of your frontend
+    "https://zalex-backend.onrender.com",  # Replace with the domain of your live frontend
+    "https://winiphone.onrender.com",
 ]
 
 ROOT_URLCONF = "simple_send_email.urls"
