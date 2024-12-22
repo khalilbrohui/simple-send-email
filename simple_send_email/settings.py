@@ -37,9 +37,8 @@ DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 
 ALLOWED_HOSTS = ["*"]
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Application definition
@@ -53,11 +52,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "api",
     "rest_framework",
-    'drf_spectacular',
+    "drf_spectacular",
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 
@@ -69,7 +68,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 
@@ -79,6 +78,21 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",  # Replace with the URL of your frontend
     "https://zalex-backend.onrender.com",  # Replace with the domain of your live frontend
     "https://winiphone.onrender.com",
+    "https://simple-send-email.onrender.com",
+]
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "OPTIONS",
+    "PUT",
+    "DELETE",
+]
+
+CORS_ALLOW_HEADERS = [
+    "content-type",
+    "authorization",
+    "x-csrftoken",
+    # other custom headers you need to allow
 ]
 
 ROOT_URLCONF = "simple_send_email.urls"
@@ -109,8 +123,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
-        'OPTIONS': {
-            'timeout': 30,  # Set to a higher value if necessary
+        "OPTIONS": {
+            "timeout": 30,  # Set to a higher value if necessary
         },
     }
 }
@@ -159,26 +173,26 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Simple Send Email Endpoint',
-    'DESCRIPTION': 'Your API Description',
-    'VERSION': '1.0.0',
+    "TITLE": "Simple Send Email Endpoint",
+    "DESCRIPTION": "Your API Description",
+    "VERSION": "1.0.0",
     # Add other optional settings as needed
 }
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,  # To prevent disabling of default loggers
-    'handlers': {
-        'console': {
-            'level': 'ERROR',  # Only log errors and above (e.g., critical issues)
-            'class': 'logging.StreamHandler',  # Output to console
+    "version": 1,
+    "disable_existing_loggers": False,  # To prevent disabling of default loggers
+    "handlers": {
+        "console": {
+            "level": "ERROR",  # Only log errors and above (e.g., critical issues)
+            "class": "logging.StreamHandler",  # Output to console
         },
     },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'ERROR',  # Log errors or more severe messages
-            'propagate': True,
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "ERROR",  # Log errors or more severe messages
+            "propagate": True,
         },
     },
 }
