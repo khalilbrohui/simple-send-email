@@ -80,6 +80,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://winiphone.onrender.com",
     "https://simple-send-email.onrender.com",
     "https://zalex-backend-w0t5.onrender.com",
+    "https://winiphone-z51b.onrender.com/",
     "https://simple-send-email-kzbu.onrender.com",
 ]
 CORS_ALLOW_METHODS = [
