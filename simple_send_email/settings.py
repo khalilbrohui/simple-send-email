@@ -79,6 +79,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://zalex-backend.onrender.com",  # Replace with the domain of your live frontend
     "https://winiphone.onrender.com",
     "https://simple-send-email.onrender.com",
+    "https://zalex-backend-w0t5.onrender.com",
+    "https://simple-send-email-kzbu.onrender.com",
 ]
 CORS_ALLOW_METHODS = [
     "GET",
